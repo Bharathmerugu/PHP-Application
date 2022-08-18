@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "4409bf86-c01d-4dd4-99da-1cff20117465",
+		"name": "phpapplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}user.php",
+							"host": [
+								"{{baseUrl}}user",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}user.php?id=1",
+							"host": [
+								"{{baseUrl}}user",
+								"php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Jsohn\",\n    \"lastname\": \"Smith\",\n    \"email\": \"john.smith2@user.com\",\n    \"password\": \"Password01\",\n    \"role\": \"customer\",\n    \"shippingaddress\":\"abc213\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}user.php",
+							"host": [
+								"{{baseUrl}}user",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 9,\n    \"firstname\": \"ABC\",\n    \"lastname\": \"Smitaah\",\n    \"email\": \"john.smith2@user.com\",\n    \"password\": \"asdasdPasswosadrd01\",\n    \"role\": \"customer\",\n    \"shippingaddress\":\"123xyz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}user.php",
+							"host": [
+								"{{baseUrl}}user",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\": 9}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}user.php",
+							"host": [
+								"{{baseUrl}}user",
+								"php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Get All Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}comments.php",
+							"host": [
+								"{{baseUrl}}comments",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment By Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}comments.php?product=mouse",
+							"host": [
+								"{{baseUrl}}comments",
+								"php"
+							],
+							"query": [
+								{
+									"key": "product",
+									"value": "mouse"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"mouse\",\r\n    \"user\": \"xyz\",\r\n    \"rating\": 10,\r\n    \"image\": \"image2.jpg\",\r\n    \"text\": \"Best quality mouse\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}comments.php",
+							"host": [
+								"{{baseUrl}}comments",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a Comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"Soap\",\r\n    \"user\": \"ABC\",\r\n    \"rating\": 4,\r\n    \"image\": \"image.jpg\",\r\n    \"text\": \"Bad quality soap\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}comments.php",
+							"host": [
+								"{{baseUrl}}comments",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"ABC\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}comments.php",
+							"host": [
+								"{{baseUrl}}comments",
+								"php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}product.php",
+							"host": [
+								"{{baseUrl}}product",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By ProductName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}product.php?productname=PS5Controller",
+							"host": [
+								"{{baseUrl}}product",
+								"php"
+							],
+							"query": [
+								{
+									"key": "productname",
+									"value": "PS5Controller"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productname\": \"PS5Controller\",\r\n    \"description\": \"QWEREFGHI\",\r\n    \"image\": \"image2.jpg\",\r\n    \"pricing\": 300,\r\n    \"shippingcost\": 300\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}product.php",
+							"host": [
+								"{{baseUrl}}product",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productname\": \"PS5 Controller\",\r\n    \"description\": \"CVBNM\",\r\n    \"image\": \"image.jpg\",\r\n    \"pricing\": 100,\r\n    \"shippingcost\": 40\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}product.php",
+							"host": [
+								"{{baseUrl}}product",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productname\":\"PS5 Controller\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}product.php",
+							"host": [
+								"{{baseUrl}}product",
+								"php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Show Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}cart.php",
+							"host": [
+								"{{baseUrl}}cart",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Product to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"XboxController\",\r\n    \"quantities\": 40,\r\n    \"user\": \"user1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}cart.php",
+							"host": [
+								"{{baseUrl}}cart",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify a Product in Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"XboxController\",\r\n    \"quantities\": 5,\r\n    \"user\": \"user1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}cart.php",
+							"host": [
+								"{{baseUrl}}cart",
+								"php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Product from Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"XboxController\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}cart.php",
+							"host": [
+								"{{baseUrl}}cart",
+								"php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost/"
+		}
+	]
+}
